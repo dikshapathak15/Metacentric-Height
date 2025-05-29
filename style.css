@@ -1,9 +1,4 @@
-/* Mobile devices (landscape only) */
-@media only screen and (max-width: 480px) and (orientation: landscape) {
-    /* styles here */
 
-
-}
 
 * {
   margin: 0;
