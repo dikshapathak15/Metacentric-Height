@@ -3,7 +3,6 @@ const level1 = document.getElementById("level1"); // Ensure this exists in your 
 const ins = document.getElementById("ins"); // Ensure this exists in your HTML
 const watertank = document.getElementById("watertank"); // Ensure this exists in your HTML
 
-
 function movePontoon() {
    const insText = instructions.textContent;
 
