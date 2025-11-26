@@ -1,8 +1,8 @@
 function displayCalculator() {
-    // Create the calculator dynamically
-    const gmcalculator = document.createElement("div");
-    gmcalculator.id = "gmcalculator";
-    gmcalculator.style = `
+  // Create the calculator dynamically
+  const gmcalculator = document.createElement("div");
+  gmcalculator.id = "gmcalculator";
+  gmcalculator.style = `
         position: fixed;
         top: 200px;
         right: 600px;
@@ -17,7 +17,7 @@ function displayCalculator() {
         transition: opacity 0.5s ease-in;
     `;
 
-    gmcalculator.innerHTML = `
+  gmcalculator.innerHTML = `
         <style>
             .gmcalculator .input-group {
                 margin-bottom: 12px;
@@ -83,42 +83,44 @@ function displayCalculator() {
         </div>
     `;
 
-    document.body.appendChild(gmcalculator);
+  document.body.appendChild(gmcalculator);
 
-    setTimeout(() => {
-        gmcalculator.style.opacity = '1'; // Fade in after 1 second
-    }, 800);
+  setTimeout(() => {
+    gmcalculator.style.opacity = "1"; // Fade in after 1 second
+  }, 800);
 
-    // Event listener for calculation
-    document.getElementById("calculateBtn").addEventListener("click", function() {
-        const x = parseFloat(document.getElementById("distance").value);
-        const w = parseFloat(document.getElementById("weightSmall").value);
-        const W = parseFloat(document.getElementById("weightLarge").value);
-        const theta = parseFloat(document.getElementById("angle").value);
+  // Event listener for calculation
+  document
+    .getElementById("calculateBtn")
+    .addEventListener("click", function () {
+      const x = parseFloat(document.getElementById("distance").value);
+      const w = parseFloat(document.getElementById("weightSmall").value);
+      const W = parseFloat(document.getElementById("weightLarge").value);
+      const theta = parseFloat(document.getElementById("angle").value);
 
-        const resultElement = document.getElementById("result");
-        if (isNaN(x) || isNaN(w) || isNaN(W) || isNaN(theta)) {
-            resultElement.textContent = "Please enter valid numbers.";
-            return;
-        }
+      const resultElement = document.getElementById("result");
+      if (isNaN(x) || isNaN(w) || isNaN(W) || isNaN(theta)) {
+        resultElement.textContent = "Please enter valid numbers.";
+        return;
+      }
 
-        if (W === 0) {
-            resultElement.textContent = "Weight (W) cannot be zero.";
-            return;
-        }
+      if (W === 0) {
+        resultElement.textContent = "Weight (W) cannot be zero.";
+        return;
+      }
 
-        const thetaRadians = theta * (Math.PI / 180);
-        const gm = (w * x) / (W * Math.tan(thetaRadians));
+      const thetaRadians = theta * (Math.PI / 180);
+      const gm = (w * x) / (W * Math.tan(thetaRadians));
 
-        resultElement.textContent = `GM = ${gm.toFixed(4)}`;
+      resultElement.textContent = `GM = ${gm.toFixed(4)}`;
     });
 
-    // Event listener for finish button
-    document.getElementById("finishBtn").addEventListener("click", function() {
-        gmcalculator.style.opacity = '0'; // Fade out
-        setTimeout(() => {
-            gmcalculator.remove();
-             setTimeout(() => {
+  // Event listener for finish button
+  document.getElementById("finishBtn").addEventListener("click", function () {
+    gmcalculator.style.opacity = "0"; // Fade out
+    setTimeout(() => {
+      gmcalculator.remove();
+      setTimeout(() => {
         level1.style.display = "block";
         level1.textContent = "Repeat the experiment for different weights.";
 
@@ -126,11 +128,13 @@ function displayCalculator() {
           level1.style.display = "none";
           level1.textContent = "";
 
-          setTimeout(() =>{
-              ins.innerHTML="STEP 9: Observation Table";
-          },500);
+          setTimeout(() => {
+            ins.innerHTML = "End of the experiment";
+             level1.style.display = "block";
+             level1.textContent = "End of the experiment";
+          }, 500);
         }, 3000);
-    },500);
-        }, 300); // Match fade-out duration
-    });
+      }, 500);
+    }, 300); // Match fade-out duration
+  });
 }
