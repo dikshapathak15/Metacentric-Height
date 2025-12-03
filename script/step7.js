@@ -1,6 +1,7 @@
 function displayCalculator() {
   // Create the calculator dynamically
   const gmcalculator = document.createElement("div");
+ const startbutton = document.getElementById("start");
   gmcalculator.id = "gmcalculator";
   gmcalculator.style = `
         position: fixed;
@@ -171,6 +172,7 @@ function displayCalculator() {
 `;
 
             document.body.appendChild(tableDiv);
+            startbutton.style.visibility = "visible"; 
           }, 500);
         }, 3000);
       }, 500);
