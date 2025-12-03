@@ -128,10 +128,49 @@ function displayCalculator() {
           level1.style.display = "none";
           level1.textContent = "";
 
-          setTimeout(() => {
-            ins.innerHTML = "End of the experiment";
-             level1.style.display = "block";
-             level1.textContent = "End of the experiment";
+        setTimeout(() => {
+            ins.innerHTML = "STEP 9: Observation Table";
+            let tableDiv = document.createElement("div");
+            tableDiv.id = "observationTable";
+
+            // Center of the screen
+            tableDiv.style.position = "fixed";
+            tableDiv.style.top = "60%";
+            tableDiv.style.left = "50%";
+            tableDiv.style.transform = "translate(-50%, -50%)";
+
+            tableDiv.style.zIndex = "9999";
+            tableDiv.style.background = "white";
+            tableDiv.style.padding = "12px";
+            tableDiv.style.border = "2px solid black";
+            tableDiv.style.borderRadius = "8px";
+
+            // Increase size
+            tableDiv.style.width = "75%"; // a bit wider
+            tableDiv.style.maxHeight = "900px"; // increased height
+            tableDiv.style.overflowY = "auto"; // scroll only if needed
+
+            tableDiv.innerHTML = `
+    <h3 style="text-align:center; margin-bottom:10px;">Observation Table</h3>
+
+    <table border="1" cellpadding="6" 
+           style="border-collapse: collapse; width:100%; text-align:center; font-size:14px;">
+        <tr>
+            <th>X (mm)</th>
+            <th>θ₁</th>
+            <th>θ₂</th>
+            <th>Mean θ</th>
+            <th>tan θ</th>
+            <th>GM (mm)</th>
+        </tr>
+        <tr><td>10</td><td>13</td><td>13.5</td><td>13.25</td><td>0.2354</td><td>2.36</td></tr>
+        <tr><td>20</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>30</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>40</td><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+`;
+
+            document.body.appendChild(tableDiv);
           }, 500);
         }, 3000);
       }, 500);
