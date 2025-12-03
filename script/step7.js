@@ -1,7 +1,7 @@
 function displayCalculator() {
   // Create the calculator dynamically
   const gmcalculator = document.createElement("div");
- const startbutton = document.getElementById("start");
+
   gmcalculator.id = "gmcalculator";
   gmcalculator.style = `
         position: fixed;
@@ -129,14 +129,14 @@ function displayCalculator() {
           level1.style.display = "none";
           level1.textContent = "";
 
-        setTimeout(() => {
+          setTimeout(() => {
             ins.innerHTML = "STEP 9: Observation Table";
             let tableDiv = document.createElement("div");
             tableDiv.id = "observationTable";
 
             // Center of the screen
             tableDiv.style.position = "fixed";
-            tableDiv.style.top = "60%";
+            tableDiv.style.top = "40%";
             tableDiv.style.left = "50%";
             tableDiv.style.transform = "translate(-50%, -50%)";
 
@@ -157,22 +157,24 @@ function displayCalculator() {
     <table border="1" cellpadding="6" 
            style="border-collapse: collapse; width:100%; text-align:center; font-size:14px;">
         <tr>
-            <th>X (mm)</th>
-            <th>θ₁</th>
-            <th>θ₂</th>
-            <th>Mean θ</th>
+            <th>Distance from center of cross bar to one end X (mm)</th>
+            <th>Left Inclination angle/angle of tilt(θ₁)</th>
+            <th>Left Inclination angle/angle of tilt(θ₂)</th>
+            <th>Mean tilt angle θ = (θ₁+θ₂)/2</th>
             <th>tan θ</th>
-            <th>GM (mm)</th>
+            <th>Metacentric Height GM (mm)</th>
         </tr>
         <tr><td>10</td><td>13</td><td>13.5</td><td>13.25</td><td>0.2354</td><td>2.36</td></tr>
-        <tr><td>20</td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td>30</td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td>40</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>20</td><td>1.30</td><td>1.35</td><td>1.325</td><td>0.02313</td><td>864.69</td></tr>
+        <tr><td>30</td><td>1.90</td><td>2.00</td><td>1.95</td><td>0.03406</td><td>880.49</td></tr>
+        <tr><td>40</td><td>2.60</td><td>2.70</td><td>2.65</td><td>0.04630</td><td>863.72</td></tr>
     </table>
 `;
 
             document.body.appendChild(tableDiv);
-            startbutton.style.visibility = "visible"; 
+            level1.style.display = "block";
+            level1.textContent = "End of the experiment";
+            
           }, 500);
         }, 3000);
       }, 500);

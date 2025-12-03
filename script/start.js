@@ -50,7 +50,7 @@ function start() {
   } else if (f === 4) {
     f = 5; // Update to the next state if necessary
     ins.textContent =
-      "STEP 4: Calculate the amount of water displaced by using the calculator.";
+      "STEP 4: Calculate the amount of water displaced by using the calculator and click on the finish button.";
     showCalculator();
     startbutton.style.visibility = "visible";
   } else if (f === 5) {

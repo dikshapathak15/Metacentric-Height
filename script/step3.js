@@ -109,7 +109,7 @@ function showCalculator() {
 
         const vol = (l * b)*(f-i);
 
-        resultElement.textContent = `Voume displaced is ${vol}cm^3`;
+        resultElement.textContent = `Volume displaced is ${vol}cm^3`;
     });
 
     // Event listener for finish button
