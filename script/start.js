@@ -42,6 +42,12 @@ function start() {
     ins.textContent =
       "STEP 2: Place the pontoon in a tank of water carefully till it becomes stable and observe the changes in water level.";
     startbutton.style.visibility = "hidden";
+    setTimeout(() => {
+    const pontoon = document.getElementById("pontoon");
+    if(pontoon){
+      pontoon.style.opacity = "1";
+    }
+   }, 500);
   } else if (f === 3) {
     f = 4; // Update to the next state if necessary
     ins.textContent =

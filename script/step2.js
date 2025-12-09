@@ -10,7 +10,6 @@ function movePontoon() {
   if (!insText.includes("STEP 2")) {
     return; // Do nothing if instruction is not STEP 1 or STEP 3
   }
-
   // Move the pontoon upward
   pontoon.style.transition = "all 1s ease";
   pontoon.style.transform = "translateY(-200px)";
