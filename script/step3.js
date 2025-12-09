@@ -115,6 +115,7 @@ function showCalculator() {
     // Event listener for finish button
     document.getElementById("finishButton").addEventListener("click", function() {
         volcalculator.style.opacity = '0'; // Fade out
+         startbutton.style.visibility = "visible";
         setTimeout(() => {
             volcalculator.remove();
              setTimeout(() => {

@@ -52,13 +52,13 @@ function start() {
     f = 4; // Update to the next state if necessary
     ins.textContent =
       "STEP 3: Click on the scale and calculate the amount of water displaced";
-    startbutton.style.visibility = "visible";
+   startbutton.style.visibility = "hidden";
   } else if (f === 4) {
     f = 5; // Update to the next state if necessary
     ins.textContent =
       "STEP 4: Calculate the amount of water displaced by using the calculator and click on the finish button.";
     showCalculator();
-    startbutton.style.visibility = "visible";
+    startbutton.style.visibility = "hidden";
   } else if (f === 5) {
     f = 6;
     startbutton.style.visibility = "visible"; // Update to the next state if necessary
